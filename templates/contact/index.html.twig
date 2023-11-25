@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="row">
+		<div class="col">
+			<h2>Contact Management</h2>
+
+			{# message de confirmation stocké en session : message flash #}
+			{% for notice in app.flashes('notice') %}
+				<p class="alert alert-success">{{ notice }}</p>
+			{% endfor %}
+			
+			<p>
+				<a href="{{ url('contact.form') }}" class="btn btn-info">Add</a>
+			</p>
+			<table class="table table-striped">
+				<tr>
+					<th>Subject</th>
+					<th>Email</th>
+					<th>Message</th>
+				</tr>
+				{% for contact in contacts %}
+					<tr>
+						<td>
+							{{ contact.subject }}
+						</td>
+						<td>
+							{{ contact.email}}
+						</td>
+						<td>
+							{{ contact.message }}
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+{% endblock %}

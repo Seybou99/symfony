@@ -1,0 +1,14 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+# config/routes.yaml
+app_contact:
+    resource: ../src/Controller/ContactController.php
+    type: annotation
+# config/routes.yaml
+
+contact:
+    path: /contact
+    controller: App\Controller\ContactController::contact

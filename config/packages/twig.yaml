@@ -1,0 +1,8 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    # les fichiers de thèmes de formulaire se trouvent dans vendor/symfony/twig-bridge/resources/view/form
+    form_themes: [ 'bootstrap_5_layout.html.twig' ]
+
+when@test:
+    twig:
+        strict_variables: true
