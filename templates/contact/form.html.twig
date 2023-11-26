@@ -11,6 +11,10 @@
 					attr: { novalidate: 'novalidate' },
 				})
 			}}
+			{# message de confirmation stocké en session : message flash #}
+			{% for notice in app.flashes('notice') %}
+				<p class="alert alert-success">{{ notice }}</p>
+			{% endfor %}
 				<p>
 					{{ form_label(form.subject, 'Subject : ') }}
 					{{ form_widget(form.subject) }}

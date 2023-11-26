@@ -66,7 +66,7 @@ class ContactController extends AbstractController
 			$this->addFlash('notice', $message);
 
 			// redirection vers la page d'accueil de l'admin
-			return $this->redirectToRoute('contact.index');
+			return $this->redirectToRoute('contact.form');
 		}
 
 		return $this->render('contact/form.html.twig', [
